@@ -1,0 +1,8 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3853
+
+use vim as your personal wiki 
+
+uses dokuwiki syntax for wiki
+       http://dokuwiki.org/syntax
+
+supports inline source higlight for embeded code

@@ -1,0 +1,134 @@
+use vim as your personal wiki using dokuwiki syntax
+
+if you don't know how to see the folded texts below
+enter ''zR'' to open all foldings!
+
+=====Intro=====
+
+with this plugin you can use vim your wiki. the plugin uses dokuwiki syntax
+highlithing systen so you can use it for your personal dokuwiki pages
+
+
+=====Usage=====
+
+====Options====
+
+before using this plugin setup some important options.
+if you want to change the default value add these lines to your vimrc file
+
+===g:dokuwiki_index===
+
+<code vim>
+let g:dokuwiki_index = "~/.vim/wiki/start.txt"
+</code>
+
+this is the index file in your wiki (**should be file not dir**) what should i say?
+
+===g:dokuwiki_inline_highlight===
+
+<code vim>
+let g:dokuwiki_inline_highlight = ['vim', 'c', 'python']
+" DEFAULT : vim
+</code>
+
+dokuwiki plugin supports highlighting inline code inside wiki pages but you
+should set active languages with this option. 
+I could add all supported langs but it would take a long startup time
+
+===g:dokuwiki_file_browser_plugin===
+
+<code vim>
+let g:dokuwiki_file_browser_plugin = 'NERDTree'
+</code>
+
+you should use an external file browser plugin to see files in your wiki
+I recommend using Nerd Tree
+  * [[www.vim.org/scripts/script.php?script_id=1658|NerdTree]]
+
+
+===g:dokuwiki_enable_fold===
+
+<code vim>
+let g:dokuwiki_enable_fold = 1
+</code>
+
+dokuwiki has an internal function to fold page using heading levels.
+if you want to deactivate it set it to 0
+
+===g:dokuwiki_enable_fold_code===
+
+<code vim>
+let g:dokuwiki_enable_fold_code = 0
+</code>
+
+the folding function doesn't fold the %%<code></code>%% sections.
+if you want to fold codes set it to 1
+
+  * to use folding codes you need to have ''g:dokuwiki_enable_fold = 1''
+
+===g:dokuwiki_enable_set_fold_text===
+
+<code vim>
+let g:dokuwiki_enable_set_fold_text = 1
+</code>
+
+use internal function for foldtext
+
+see: '':help foldtext'' for more info
+
+  * foldtext => expression used to display the text of a closed fold
+
+====Mappings====
+
+to use I recommend adding some mappings. I didn't add any mappings automatically
+so you can ue our own, you can even not use any mapping and enter commands
+directly
+
+===DokuWikiOpen===
+
+<code vim>
+nnoremap <leader>ww :DokuWikiOpen<CR>
+</code>
+
+open wiki root dir with ''g:dokuwiki_file_browser_plugin''
+
+to use it as command enter this
+
+<code vim>
+:DokuWikiOpen
+</code>
+
+==leader==
+
+the default value for leader is \
+
+  * so <leader>ww means \ww
+see '':help leader'' for more info
+
+
+===DokuWikiOpenIndex===
+
+<code vim>
+nnoremap <leader>wi :DokuWikiOpenIndex<CR>
+</code>
+
+open wiki root file in current buffer
+
+to use it as command enter this
+
+<code vim>
+:DokuWikiOpenIndex
+</code>
+
+=====Syntax=====
+
+this plugin uses dokuwiki syntax for highlighting text
+read dokuwiki syntax documentions for learning it!
+
+[[www.dokuwiki.org/syntax|Dokuwiki Syntax]]
+
+=====help=====
+
+if you want help me just contact me.
+
+this plugin is the the beginning and need many more options
